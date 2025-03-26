@@ -5,7 +5,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-@Log4j2
+ //@Log4j2
 public class KafkaProducerService {
     private final KafkaTemplate<String, String> kafkaTemplate;
     public KafkaProducerService(KafkaTemplate<String, String> kafkaTemplate) {
@@ -13,6 +13,6 @@ public class KafkaProducerService {
     }
     public void sendMessage(String topic, String message) {
         kafkaTemplate.send(topic, message);
-        log.info("Message sent to topic " + topic + " : " + message);
+//        log.info("Message sent to topic " + topic + " : " + message);
     }
 }
